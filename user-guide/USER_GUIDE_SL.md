@@ -1,6 +1,6 @@
 # DesktopSQLVisualizer - Uporabniski Prirocnik
 
-Verzija: 1.0.0
+Verzija: 1.0.1
 
 ## 1. Pregled aplikacije
 
@@ -39,8 +39,10 @@ V SQL editorju so na voljo:
 - **Max rows**
 - **Format**
 - **Params**
+- **Hide Params / Show Params**
 - **Explain**
 - **Execute**
+- **Cancel** (med izvajanjem)
 
 ![SQL editor in parametri](images/10.png)
 
@@ -73,6 +75,14 @@ Priporocilo:
 ### Format SQL
 
 Gumb **Format** poravna SQL zapis (odmiki, keyword format), da je poizvedba bolj berljiva.
+
+### Parametri in nacin dela samo v editorju
+
+- **Params (N)** zazna parametre v trenutnem SQL.
+- **Hide Params** skrije panel s parametri, da lahko delate neposredno v editorju.
+- **Show Params** ponovno prikaze panel.
+- Prikaz/skritje parametrov se shrani tudi po ponovnem zagonu aplikacije.
+- Ce je parametrov veliko, se zgornji SQL del samodejno poveca, da editor ostane viden.
 
 ## 4. Rezultati (multi-resultset)
 
@@ -218,6 +228,14 @@ Preverite:
 ### Premalo vrstic v rezultatu
 
 Povecajte **Max rows** in poizvedbo izvedite znova.
+
+### Tezave s tipi parametrov na DB2
+
+Ce procedura na DB2 zahteva specificen tip (npr. array ali numeric), uporabite:
+
+- tip parametra iz metadata procedure v panelu Params,
+- po moznosti named parametre (`:param`),
+- array vrednosti v podprtih oblikah (`{1,2}`, `[1,2]` ali typed array syntax, ce ga procedura zahteva).
 
 ### Podpora
 

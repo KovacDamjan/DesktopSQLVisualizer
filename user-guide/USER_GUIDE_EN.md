@@ -1,6 +1,6 @@
 # DesktopSQLVisualizer - User Guide
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## 1. Application Overview
 
@@ -39,8 +39,10 @@ Available controls in the SQL editor:
 - **Max rows**
 - **Format**
 - **Params**
+- **Hide Params / Show Params**
 - **Explain**
 - **Execute**
+- **Cancel** (while execution is running)
 
 ![SQL editor and parameters](images/10.png)
 
@@ -73,6 +75,14 @@ Recommendation:
 ### Format SQL
 
 The **Format** button reformats SQL (indentation/keyword layout) for better readability.
+
+### Parameters panel and editor-only mode
+
+- **Params (N)** detects parameters in current SQL.
+- **Hide Params** collapses the parameter panel so you can work directly in the editor.
+- **Show Params** brings the panel back.
+- Parameter panel visibility is remembered after app restart.
+- If many parameters are detected, the top SQL area auto-expands to keep editor visible.
 
 ## 4. Results (multi-resultset)
 
@@ -213,6 +223,14 @@ Check:
 ### Too few rows in result
 
 Increase **Max rows** and execute again.
+
+### DB2 parameter type issues
+
+If a DB2 procedure expects specific types (for example array or numeric), use:
+
+- procedure metadata-based parameter types in Params panel,
+- named parameters (`:param`) when possible,
+- array values in supported formats such as `{1,2}`, `[1,2]`, or typed array syntax when required by the procedure.
 
 ### Support data to provide
 
