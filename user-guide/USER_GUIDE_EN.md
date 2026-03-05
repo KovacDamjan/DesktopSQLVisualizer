@@ -1,6 +1,6 @@
 # DesktopSQLVisualizer - User Guide
 
-Version: 1.0.1
+Version: 1.0.13
 
 ## 1. Application Overview
 
@@ -63,6 +63,20 @@ Useful for:
 - slow query analysis,
 - index usage checks,
 - comparing optimization changes.
+
+Explain output is shown as a **tree view** with:
+
+- operator name,
+- object name (when available),
+- node metrics (cost/rows),
+- detail line (predicate/keys/access details).
+
+The tree is available for MSSQL, MySQL, PostgreSQL, and DB2.
+
+In **Settings -> Diagnostics**, you can set **Explain details**:
+
+- **Compact**: short and readable detail output,
+- **Full**: full detail output per node.
 
 ### Max rows
 

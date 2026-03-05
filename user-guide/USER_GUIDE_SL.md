@@ -1,6 +1,6 @@
 # DesktopSQLVisualizer - Uporabniski Prirocnik
 
-Verzija: 1.0.1
+Verzija: 1.0.13
 
 ## 1. Pregled aplikacije
 
@@ -63,6 +63,20 @@ Uporabno za:
 - analizo pocasnih poizvedb,
 - preverjanje index uporabe,
 - primerjavo sprememb po optimizaciji SQL.
+
+Explain rezultat je prikazan kot **drevesni pogled** in vsebuje:
+
+- ime operatorja,
+- objekt (ce je na voljo),
+- metrike noda (cost/rows),
+- dodatno vrstico s podrobnostmi (predicate/keys/access).
+
+Drevesni Explain je na voljo za MSSQL, MySQL, PostgreSQL in DB2.
+
+V **Settings -> Diagnostics** lahko nastavite **Explain details**:
+
+- **Compact**: krajsi, bolj pregleden izpis,
+- **Full**: poln izpis podrobnosti po nodih.
 
 ### Max rows
 
